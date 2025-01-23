@@ -1,0 +1,33 @@
+query RunInput {
+  cart {
+    isInsurance: attribute(key: "isInsurance") {
+      value
+    }
+    insuranceCost: attribute(key: "insuranceCost") {
+      value
+    }
+    insuranceLabel: attribute(key: "insuranceLabel") {
+      value
+    }
+    lines {
+      id
+      merchandise {
+        ... on ProductVariant {
+          title
+        }
+      }
+      cost {
+        subtotalAmount {
+          amount
+        }
+        totalAmount {
+          amount
+        }
+      }
+      quantity
+      _custom_price: attribute(key: "_custom_price") {
+        value
+      }
+    }
+  }
+}

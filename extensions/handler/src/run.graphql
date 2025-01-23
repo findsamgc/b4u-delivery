@@ -1,0 +1,22 @@
+query RunInput {
+  cart {
+    cost {
+      totalAmount {
+        amount
+      }
+    }
+    deliveryGroups {
+      deliveryAddress {
+        zip
+      }
+      deliveryOptions {
+        __typename
+        handle
+        title
+        cost {
+          amount
+        }
+      }
+    }
+  }
+}
